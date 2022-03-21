@@ -31,14 +31,23 @@
  * let random = numbers.getRandom();  // randomly returns something from the array. e.g. 3
  * console.log(random); // 3 (the random element)
  * console.log(numbers);  // [1, 2, 4] (missing the random element)
+ * THIS REMOVES AND RETURNS A RANDOM ELEMENT IN THE ARRAY!!!!
  ************************************************/
 Array.prototype.getRandom = function () {
   return this.splice(Math.floor(Math.random() * this.length), 1)[0];
 };
 
 function pairs(names) {
-  // Your code goes here
+  // let new_arr = [];
+  //if received empty array OR no argument:
+  if (names = [] || names === null){
+    return [];
+
+  } 
 }
+
+let myname = [];
+console.log(pairs(myname));
 
 module.exports = pairs;
 
