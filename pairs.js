@@ -38,12 +38,39 @@ Array.prototype.getRandom = function () {
 };
 
 function pairs(names) {
-  // let new_arr = [];
+  let r1 = 0;
+  let r2 = 0;
+  let r3 = 0;
+  let new_arr = [];
   //if received empty array OR no argument:
-  if (names = [] || names === null){
+  //NOTE names = [] is wrong cuz assigning it an empty array, and !names MEANS NULL!!!!!!!
+  if (names == null){
     return [];
 
-  } 
+  } else if (names.length === 0){
+    return [];
+  }else 
+  if(names.length === 2){
+    r1 = names.pop();
+    r2 = names.pop();
+    new_arr.push([r1,r2]);
+    return new_arr;
+    //return pairs if passed multiple names
+    // array.length > 2 OR while array.length > 1-> add pairs
+    //if it breaks then add that one pair in a separate place
+  }
+  while(names.length > 1){
+    r1 = names.getRandom();
+    r2 = names.getRandom();
+    new_arr.push([r1,r2]);
+  }
+  if(names.length === 1){
+    r3 = names.getRandom();
+    new_arr.push([r3]);
+
+  }
+  return new_arr;
+
 }
 
 let myname = [];
